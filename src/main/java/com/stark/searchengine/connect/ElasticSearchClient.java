@@ -13,6 +13,9 @@ import java.io.InputStream;
 import java.net.InetAddress;
 import java.util.Properties;
 
+/**
+ * TransportClient方式创建ES连接，不推荐，弃用
+ */
 @Component
 public class ElasticSearchClient {
 	Logger log = LoggerFactory.getLogger(ElasticSearchClient.class);
