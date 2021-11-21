@@ -1,5 +1,6 @@
 package com.stark.searchengine.controller;
 
+import com.stark.searchengine.dto.ArticleDto;
 import com.stark.searchengine.service.ElasticSearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,7 +29,8 @@ public class SearchController {
 	}
 
 	@RequestMapping(value = "fuzzySearch", method = RequestMethod.GET)
-	public String fuzzySearch() throws IOException {
-		return esSerivce.fuzzySearch();
+	public ArticleDto fuzzySearch() throws IOException {
+		ArticleDto result = esSerivce.fuzzySearch();
+		return result;
 	}
 }

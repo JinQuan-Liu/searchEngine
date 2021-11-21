@@ -4,8 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.stark.searchengine.bean.News;
 import com.stark.searchengine.constants.IndexInfo;
 import com.stark.searchengine.dto.ArticleDto;
-import org.elasticsearch.action.get.GetRequest;
-import org.elasticsearch.action.get.GetResponse;
+import com.stark.searchengine.vo.ArticleVo;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.action.search.SearchRequest;
@@ -21,30 +20,21 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Service
-public class ElasticSearchService {
+public class ArticleService {
 	Logger log = LoggerFactory.getLogger(ElasticSearchService.class);
 
-	// elasticSearch客户端
 	@Qualifier("restHighLevelClient")
 	@Autowired
 	private RestHighLevelClient client;
-
-	public String searchById(String id) throws IOException {
-		log.info("queryById start id:{}", id);
-		GetRequest request = new GetRequest("nba", "nba",id);
-		GetResponse response = client.get(request, RequestOptions.DEFAULT);
-		log.info("queryById end, query result:{}", response);
-		if (null != response) {
-			return response.toString();
-		} else {
-			return "查无结果";
-		}
-	}
 
 	public IndexResponse save(String title, String tag, Date time) {
 		IndexRequest indexRequest = new IndexRequest(IndexInfo.NEWS_INDEX_NAME, IndexInfo.NEWS_INDEX_TYPE);
@@ -67,25 +57,21 @@ public class ElasticSearchService {
 		return null;
 	}
 
-	public ArticleDto fuzzySearch() throws IOException {
+	public List<ArticleDto> fuzzySearch(ArticleVo inputContent) throws IOException {
 		SearchSourceBuilder builder = new SearchSourceBuilder();
 		SearchRequest searchRequest = new SearchRequest();
-//		searchRequest.indices("nba");
-//		builder.query(QueryBuilders.matchQuery("gymnasium", "球馆"));
-//		builder.query(QueryBuilders.matchPhrasePrefixQuery("gymnasium", "球馆"));
 		builder.query(QueryBuilders.boolQuery()
-			.should(QueryBuilders.matchQuery("name_en", "Cleveland"))
-			.should(QueryBuilders.matchQuery("publishTime", "1636873402352")));
+				.should(QueryBuilders.matchQuery("content", inputContent.getInputContent()))
+				.should(QueryBuilders.matchQuery("title", inputContent.getInputContent())));
 		searchRequest.source(builder);
 		SearchResponse searchResponse = client.search(searchRequest, RequestOptions.DEFAULT);
-		ArticleDto searchDto = new ArticleDto();
-		int index = 1;
+
+		List<ArticleDto> articleDtoList = new ArrayList<>();
 		for (SearchHit searchHit : searchResponse.getHits().getHits()) {
 			System.out.println(searchHit.getSourceAsString());
-			searchDto.setTitle("" + index++);
-			searchDto.setContent(searchHit.getSourceAsString());
-//			searchDto.setTitle(searchHit);
+			ArticleDto articleDto = JSON.parseObject(searchHit.getSourceAsString(), ArticleDto.class);
+			articleDtoList.add(articleDto);
 		}
-		return searchDto;
+		return articleDtoList;
 	}
 }
