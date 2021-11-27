@@ -15,7 +15,8 @@
 </p>
 
 <p align="center">
-  <span>中文 | <a href="./README.en.md">English</a></span>
+<!--   <span>中文 | <a href="./README.en.md">English</a></span> -->
+  <span>中文 | English</span>
 </p>
 
 # searchEngine
