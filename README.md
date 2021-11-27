@@ -19,7 +19,7 @@
   <span>中文 | English</span>
 </p>
 
-### 项目简介
+## 项目简介
 ✨ **searchEngine** 是基于 ElasticSearch 和 Java 实现的**文本高亮搜索**项目，模拟搜索引擎检索相似内容。<br/>
 该项目集成了 Spring Boot、ElasticSearch、RestHighLevelClient、Vue.js、Element-ui、Log4j 和 Fastjson 等相关技术。<br/>
 通过 ElasticSearch 存储文章文本数据，并通过 RestHighLevelClient 访问服务器进行数据读取和存储，并通过 Vue.js 进行可视化操作。<br/>
@@ -35,7 +35,7 @@
 
 ![image](https://user-images.githubusercontent.com/41223520/143683572-61a25376-b54a-4784-a16e-bb149b976420.png)
 
-### 运行方式
+## 运行方式
 1. git clone `https://github.com/Abel-LiuJinQuan/searchEngine.git`
 2. 使用 IDEA 打开 clone 下来的项目
 3. 在 IDEA 中 `Maven Projects` 的面板导入项目根目录下 的 `pom.xml` 文件
@@ -45,8 +45,8 @@
 7. 进入 Vue 项目目录`frontend/searchEngineVue`下，依次执行 `npm install` -> `npm run build` -> `npm run dev`，运行 Vue 项目
 8. 访问 `http://127.0.0.1:8081/`，完成。
 
-### 版本列表
-#### v0.0.1
+## 版本列表
+### v0.0.1
 
 1.使用 ElasticSearch 搭建 Java 底层调用逻辑，封装 ES 的 API，
 为后续搜索引擎平台开发提供简易API
