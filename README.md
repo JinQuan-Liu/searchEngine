@@ -20,7 +20,7 @@
 </p>
 
 ## 项目简介
-✨ **searchEngine** 是基于 ElasticSearch 和 Java 实现的**文本高亮搜索**项目，模拟搜索引擎检索相似内容。<br/>
+✨ **searchEngine** 是基于 ElasticSearch 和 Java 实现的**搜索引擎系统**，实现关键字高亮搜索、添加文本等功能。<br/>
 该项目集成了 Spring Boot、ElasticSearch、RestHighLevelClient、Vue.js、Element-ui、Log4j 和 Fastjson 等相关技术。<br/>
 通过 ElasticSearch 存储文章文本数据，并通过 RestHighLevelClient 访问服务器进行数据读取和存储，并通过 Vue.js 进行可视化操作。<br/>
 后续将不断对项目进行优化，添加更多功能，欢迎感兴趣的同学一起交流学习🔥。
