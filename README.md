@@ -1,17 +1,17 @@
-<h1 align="center"><a href="https://github.com/Abel-LiuJinQuan" target="_blank">searchEngine</a></h1>
+<h1 align="center"><a href="https://github.com/JinQuan-Liu" target="_blank">searchEngine</a></h1>
 <p align="center">
-<!--   <a href="https://github.com/Abel-LiuJinQuan/searchEngine"><img alt="Travis-CI" src="https://travis-ci.com/xkcoding/spring-boot-demo.svg?branch=master"/></a> -->
+<!--   <a href="https://github.com/JinQuan-Liu/searchEngine"><img alt="Travis-CI" src="https://travis-ci.com/xkcoding/spring-boot-demo.svg?branch=master"/></a> -->
 <!--   <a href="https://www.codacy.com/app/xkcoding/spring-boot-demo?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=xkcoding/spring-boot-demo&amp;utm_campaign=Badge_Grade"><img alt="Codacy" src="https://api.codacy.com/project/badge/Grade/1f2e3d437b174bfc943dae1600332ec1"/></a> -->
   <a href="https://blog.csdn.net/Abel_Liujinquan"><img alt="author" src="https://img.shields.io/badge/author-JinQuan.Liu-blue.svg"/></a>
   <a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html"><img alt="JDK" src="https://img.shields.io/badge/JDK-1.8.0_161-orange.svg"/></a>
   <a href="https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/html/"><img alt="Spring Boot" src="https://img.shields.io/badge/Spring Boot-2.3.4.RELEASE-brightgreen.svg"/></a>
-  <a href="https://github.com/Abel-LiuJinQuan/searchEngine/blob/master/LICENSE"><img alt="LICENSE" src="https://img.shields.io/github/license/Abel-LiuJinQuan/searchEngine.svg"/></a>
+  <a href="https://github.com/JinQuan-Liu/searchEngine/blob/master/LICENSE"><img alt="LICENSE" src="https://img.shields.io/github/license/JinQuan-Liu/searchEngine.svg"/></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/Abel-LiuJinQuan/searchEngine/stargazers"><img alt="star" src="https://img.shields.io/github/stars/Abel-LiuJinQuan/searchEngine.svg?label=Stars&style=social"/></a>
-  <a href="https://github.com/Abel-LiuJinQuan/searchEngine/network/members"><img alt="star" src="https://img.shields.io/github/forks/Abel-LiuJinQuan/searchEngine.svg?label=Fork&style=social"/></a>
-  <a href="https://github.com/Abel-LiuJinQuan/searchEngine/watchers"><img alt="star" src="https://img.shields.io/github/watchers/Abel-LiuJinQuan/searchEngine.svg?label=Watch&style=social"/></a>
+  <a href="https://github.com/JinQuan-Liu/searchEngine/stargazers"><img alt="star" src="https://img.shields.io/github/stars/JinQuan-Liu/searchEngine.svg?label=Stars&style=social"/></a>
+  <a href="https://github.com/JinQuan-Liu/searchEngine/network/members"><img alt="star" src="https://img.shields.io/github/forks/JinQuan-Liu/searchEngine.svg?label=Fork&style=social"/></a>
+  <a href="https://github.com/JinQuan-Liu/searchEngine/watchers"><img alt="star" src="https://img.shields.io/github/watchers/JinQuan-Liu/searchEngine.svg?label=Watch&style=social"/></a>
 </p>
 
 <p align="center">
@@ -36,7 +36,7 @@
 ![image](https://user-images.githubusercontent.com/41223520/143683572-61a25376-b54a-4784-a16e-bb149b976420.png)
 
 ## 运行方式
-1. git clone `https://github.com/Abel-LiuJinQuan/searchEngine.git`
+1. git clone `https://github.com/JinQuan-Liu/searchEngine.git`
 2. 使用 IDEA 打开 clone 下来的项目
 3. 在 IDEA 中 `Maven Projects` 的面板导入项目根目录下 的 `pom.xml` 文件
 4. 编辑 `application.properties` 文件，配置自己的 ElasticSearch IP 和 Host(默认为9200)
