@@ -2,7 +2,8 @@ package com.stark.searchengine.controller;
 
 import com.stark.searchengine.dto.ArticleDto;
 import com.stark.searchengine.service.ArticleService;
-import com.stark.searchengine.vo.ArticleVo;
+import com.stark.searchengine.vo.ArticleSaveVo;
+import com.stark.searchengine.vo.ArticleSearchVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,13 +18,19 @@ public class ArticleController {
 	private ArticleService articleService;
 
 	@RequestMapping(value = "save", method = RequestMethod.POST)
-	public void save(@RequestParam("title") String title, @RequestParam("content") String content) {
-		return;
+	public String save(@RequestBody ArticleSaveVo articleSaveVo) {
+		return articleService.save(articleSaveVo);
 	}
 
 	@RequestMapping(value = "fuzzySearch", method = RequestMethod.POST)
-	public List<ArticleDto> fuzzySearch(@RequestBody ArticleVo inputContent) throws IOException {
+	public List<ArticleDto> fuzzySearch(@RequestBody ArticleSearchVo inputContent) throws IOException {
 		List<ArticleDto> result = articleService.fuzzySearch(inputContent);
+		return result;
+	}
+
+	@RequestMapping(value = "searchAll", method = RequestMethod.GET)
+	public List<ArticleDto> searchAll() throws IOException {
+		List<ArticleDto> result = articleService.searchAll();
 		return result;
 	}
 }

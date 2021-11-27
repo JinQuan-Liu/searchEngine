@@ -1,6 +1,6 @@
 package com.stark.searchengine.vo;
 
-public class ArticleVo {
+public class ArticleSearchVo {
 	private String inputContent;
 
 	public String getInputContent() {
